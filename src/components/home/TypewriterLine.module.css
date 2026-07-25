@@ -1,0 +1,32 @@
+.line {
+  display: inline-flex;
+  min-height: 1.5em;
+  color: var(--accent-secondary);
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.04em;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent-warm);
+  animation: cursor-hold 1.05s steps(1, end) infinite;
+}
+
+@keyframes cursor-hold {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
