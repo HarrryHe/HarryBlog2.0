@@ -19,6 +19,10 @@
   letter-spacing: 0.06em;
 }
 
+.list {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 .empty {
   display: grid;
   min-height: 8rem;

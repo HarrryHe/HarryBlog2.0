@@ -25,7 +25,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  canonicalUrl: "https://harry-blog20.vercel.app",
+  canonicalUrl: "https://harry-blog2-0.vercel.app",
   name: "Harry",
   displayName: "Jiacheng (Harry) He",
   handle: "HarrryHe",

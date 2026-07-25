@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { PostDocument } from "@/lib/content/posts";
 import styles from "./PostHeader.module.css";
 
@@ -11,7 +12,12 @@ export function PostHeader({ post }: { post: PostDocument }) {
 
   return (
     <header className={styles.header}>
-      <p className={styles.route}>~/posts/{post.slug}</p>
+      <div className={styles.context}>
+        <p className={styles.route}>~/posts/{post.slug}</p>
+        <Link href="/archive" className={styles.archiveLink}>
+          <span aria-hidden="true">←</span> Archive
+        </Link>
+      </div>
       <h1>{post.title}</h1>
       <p className={styles.description}>{post.description}</p>
       <div className={styles.meta}>

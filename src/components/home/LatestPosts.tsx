@@ -20,7 +20,7 @@ export function LatestPosts({ posts }: LatestPostsProps) {
       </header>
 
       {posts.length > 0 ? (
-        <div>
+        <div className={styles.list}>
           {posts.slice(0, 5).map((post, index) => (
             <PostRow key={post.slug} post={post} index={index} />
           ))}

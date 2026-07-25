@@ -36,6 +36,10 @@
   color: var(--accent-primary);
 }
 
+.list {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 .empty {
   color: var(--text-muted);
 }

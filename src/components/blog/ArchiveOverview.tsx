@@ -16,7 +16,7 @@ export function ArchiveOverview({ groups }: ArchiveOverviewProps) {
           {groups.map((group) => (
             <section key={group.year} className={styles.group}>
               <h2>{group.year}</h2>
-              <div>
+              <div className={styles.list}>
                 {group.posts.map((post, index) => (
                   <PostRow key={post.slug} post={post} index={index} />
                 ))}
