@@ -29,7 +29,7 @@ export function GiscusComments() {
           strict="0"
           reactionsEnabled="1"
           emitMetadata="0"
-          inputPosition="top"
+          inputPosition="bottom"
           theme="catppuccin_mocha"
           lang="en"
           loading="lazy"

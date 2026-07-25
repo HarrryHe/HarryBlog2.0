@@ -55,8 +55,8 @@ export const siteConfig: SiteConfig = {
   ],
   giscus: {
     repo: "HarrryHe/HarryBlog2.0",
-    repoId: "R_kgDORFMbYw",
-    category: "Giscus",
-    categoryId: "DIC_kwDORFMbY84C1rB3"
+    repoId: "R_kgDOTi0NbA",
+    category: "Chat Section",
+    categoryId: "DIC_kwDOTi0NbM4DB6pG"
   }
 };
