@@ -30,7 +30,7 @@ export function GiscusComments() {
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="bottom"
-          theme="catppuccin_mocha"
+          theme="dark_dimmed"
           lang="en"
           loading="lazy"
         />
