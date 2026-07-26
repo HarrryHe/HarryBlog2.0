@@ -9,7 +9,7 @@ export function AvatarFrame({ className, alt, ...imageProps }: AvatarFrameProps)
   return (
     <div
       data-avatar-frame
-      className={["inline-block", className].filter(Boolean).join(" ")}
+      className={[styles.frame, "inline-block", className].filter(Boolean).join(" ")}
     >
       <div data-avatar-visual className="relative aspect-square w-full">
         <Image
