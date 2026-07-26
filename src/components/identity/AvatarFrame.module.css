@@ -1,20 +1,6 @@
-.frame {
-  position: relative;
-  display: block;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--border-strong);
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .ring {
   position: absolute;
-  inset: -0.32rem;
+  inset: 0.18rem;
   border: 1px solid color-mix(in srgb, var(--accent-secondary) 68%, transparent);
   border-right-color: transparent;
   border-radius: 50%;

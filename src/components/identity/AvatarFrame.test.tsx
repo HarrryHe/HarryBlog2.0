@@ -19,4 +19,24 @@ describe("AvatarFrame", () => {
       "true"
     );
   });
+
+  it("groups the image and ring in a square visual boundary", () => {
+    const { container } = render(
+      <AvatarFrame
+        src="/brand/kito.webp"
+        alt="Harry's Kito avatar"
+        width={168}
+        height={168}
+      />
+    );
+
+    const frame = container.querySelector<HTMLElement>("[data-avatar-frame]");
+    const visual = container.querySelector<HTMLElement>("[data-avatar-visual]");
+
+    expect(frame).toContainElement(visual);
+    expect(visual).toContainElement(
+      screen.getByRole("img", { name: "Harry's Kito avatar" })
+    );
+    expect(visual).toContainElement(container.querySelector("[data-avatar-ring]"));
+  });
 });

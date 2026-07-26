@@ -7,9 +7,18 @@ interface AvatarFrameProps extends Omit<ImageProps, "className"> {
 
 export function AvatarFrame({ className, alt, ...imageProps }: AvatarFrameProps) {
   return (
-    <div className={[styles.frame, className].filter(Boolean).join(" ")}>
-      <Image {...imageProps} className={styles.image} alt={alt} />
-      <span className={styles.ring} data-avatar-ring aria-hidden="true" />
+    <div
+      data-avatar-frame
+      className={["inline-block", className].filter(Boolean).join(" ")}
+    >
+      <div data-avatar-visual className="relative aspect-square w-full">
+        <Image
+          {...imageProps}
+          className="block size-full rounded-full border border-strong-border object-cover"
+          alt={alt}
+        />
+        <span className={styles.ring} data-avatar-ring aria-hidden="true" />
+      </div>
     </div>
   );
 }
