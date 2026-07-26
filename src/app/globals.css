@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @import "@fontsource-variable/ibm-plex-sans";
 
 @font-face {
@@ -41,6 +42,21 @@
   --shell-width: 56rem;
   --content-width: 56rem;
   --reading-width: 56rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-strong: var(--text-strong);
+  --color-muted: var(--text-muted);
+  --color-dim: var(--text-dim);
+  --color-primary: var(--accent-primary);
+  --color-secondary: var(--accent-secondary);
+  --color-subtle: var(--border-subtle);
+  --color-strong-border: var(--border-strong);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 * {
