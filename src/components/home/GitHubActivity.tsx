@@ -4,11 +4,14 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import styles from "./GitHubActivity.module.css";
 
+const loadingClassName =
+  "grid min-h-20 place-items-center font-mono text-[0.68rem] tracking-[0.04em] text-dim";
+
 const GitHubCalendar = dynamic(
   () => import("react-github-calendar").then((module) => module.GitHubCalendar),
   {
     ssr: false,
-    loading: () => <div className={styles.loading}>Loading contribution history…</div>
+    loading: () => <div className={loadingClassName}>Loading contribution history…</div>
   }
 );
 
@@ -58,13 +61,22 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.section} aria-label="GitHub activity">
-      <header className={styles.header}>
+    <section
+      ref={sectionRef}
+      className="mx-auto mt-[clamp(2.5rem,6vw,3.75rem)] w-[calc(100%-var(--page-gutter)*2)] max-w-[var(--content-width)]"
+      aria-label="GitHub activity"
+    >
+      <header className="mb-[0.9rem] flex flex-col items-start justify-between gap-3 border-b border-strong-border pb-3 min-[38rem]:flex-row min-[38rem]:items-end min-[38rem]:gap-4">
         <div>
-          <h2 id="github-activity-title">GitHub activity</h2>
+          <h2
+            id="github-activity-title"
+            className="m-0 text-[clamp(1.35rem,3vw,1.9rem)] font-[540] tracking-[-0.035em] text-strong"
+          >
+            GitHub activity
+          </h2>
         </div>
         <a
-          className={styles.profileLink}
+          className="shrink-0 font-mono text-[0.66rem] tracking-[0.06em] text-dim no-underline uppercase transition-colors duration-150 hover:text-primary focus-visible:text-primary"
           href={`https://github.com/${username}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -73,7 +85,9 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
         </a>
       </header>
 
-      <div className={styles.calendarFrame}>
+      <div
+        className={`${styles.calendarFrame} min-h-32 overflow-x-auto py-[clamp(0.65rem,1.8vw,0.9rem)] [scrollbar-color:var(--border-strong)_transparent]`}
+      >
         {shouldLoad ? (
           <GitHubCalendar
             username={username}
@@ -95,7 +109,7 @@ export function GitHubActivity({ username }: GitHubActivityProps) {
             errorMessage="Contribution data is unavailable right now. Visit GitHub for the live profile."
           />
         ) : (
-          <div className={styles.loading}>Contribution history loads on approach.</div>
+          <div className={loadingClassName}>Contribution history loads on approach.</div>
         )}
       </div>
     </section>

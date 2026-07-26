@@ -48,6 +48,7 @@
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-body: var(--text);
   --color-strong: var(--text-strong);
   --color-muted: var(--text-muted);
   --color-dim: var(--text-dim);
