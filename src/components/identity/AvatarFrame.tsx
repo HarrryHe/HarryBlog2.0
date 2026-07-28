@@ -1,5 +1,4 @@
 import Image, { type ImageProps } from "next/image";
-import styles from "./AvatarFrame.module.css";
 
 interface AvatarFrameProps extends Omit<ImageProps, "className"> {
   className?: string;
@@ -9,16 +8,25 @@ export function AvatarFrame({ className, alt, ...imageProps }: AvatarFrameProps)
   return (
     <div
       data-avatar-frame
-      className={[styles.frame, "inline-block", className].filter(Boolean).join(" ")}
+      className={[
+        "relative inline-grid aspect-square place-items-center rounded-full p-[0.2rem]",
+        className
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
-      <div data-avatar-visual className="relative aspect-square w-full">
+      <div data-avatar-visual className="size-full overflow-hidden rounded-full">
         <Image
           {...imageProps}
-          className="block size-full rounded-full border border-strong-border object-cover"
+          className="block size-full object-cover"
           alt={alt}
         />
-        <span className={styles.ring} data-avatar-ring aria-hidden="true" />
       </div>
+      <span
+        className="pointer-events-none absolute inset-0 rounded-full border border-secondary opacity-70"
+        data-avatar-ring
+        aria-hidden="true"
+      />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { AvatarFrame } from "./AvatarFrame";
-import styles from "./AvatarFrame.module.css";
 
 describe("AvatarFrame", () => {
   it("renders an image with an aria-hidden technical ring", () => {
@@ -33,15 +32,16 @@ describe("AvatarFrame", () => {
 
     const frame = container.querySelector<HTMLElement>("[data-avatar-frame]");
     const visual = container.querySelector<HTMLElement>("[data-avatar-visual]");
+    const ring = container.querySelector<HTMLElement>("[data-avatar-ring]");
 
     expect(frame).toContainElement(visual);
+    expect(frame).toContainElement(ring);
     expect(visual).toContainElement(
       screen.getByRole("img", { name: "Harry's Kito avatar" })
     );
-    expect(visual).toContainElement(container.querySelector("[data-avatar-ring]"));
   });
 
-  it("keeps the ring hover-state selector on its visual frame", () => {
+  it("uses a static outer frame with the image inset inside it", () => {
     const { container } = render(
       <AvatarFrame
         src="/brand/kito.webp"
@@ -51,6 +51,13 @@ describe("AvatarFrame", () => {
       />
     );
 
-    expect(container.querySelector("[data-avatar-frame]")).toHaveClass(styles.frame);
+    expect(container.querySelector("[data-avatar-frame]")).toHaveClass(
+      "aspect-square",
+      "rounded-full"
+    );
+    expect(container.querySelector("[data-avatar-visual]")).toHaveClass(
+      "overflow-hidden",
+      "rounded-full"
+    );
   });
 });
