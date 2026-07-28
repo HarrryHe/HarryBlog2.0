@@ -1,5 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("./AsciiVectorField", () => ({
+  AsciiVectorField: () => <canvas data-intro-field aria-hidden="true" />
+}));
+
 import { Hero } from "./Hero";
 
 describe("Hero", () => {
@@ -22,5 +27,14 @@ describe("Hero", () => {
       "false"
     );
     expect(container.querySelector("[data-wordmark-decoder]")).not.toBeInTheDocument();
+  });
+
+  it("places an inaccessible generative field behind the intro content", () => {
+    const { container } = render(<Hero />);
+
+    expect(container.querySelector("canvas[data-intro-field]")).toHaveAttribute(
+      "aria-hidden",
+      "true"
+    );
   });
 });

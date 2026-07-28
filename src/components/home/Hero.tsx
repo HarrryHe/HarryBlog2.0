@@ -1,14 +1,17 @@
 import { AvatarFrame } from "@/components/identity/AvatarFrame";
+import { AsciiVectorField } from "./AsciiVectorField";
 import { StructuralTypefield } from "./StructuralTypefield";
 import { TypewriterLine } from "./TypewriterLine";
 
 export function Hero() {
   return (
     <section
-      className="mx-auto w-[calc(100%-var(--page-gutter)*2)] max-w-[var(--content-width)] pt-[clamp(2.25rem,5vw,4rem)]"
+      className="relative isolate mx-auto w-[calc(100%-var(--page-gutter)*2)] max-w-[var(--content-width)] overflow-hidden pt-[clamp(2.25rem,5vw,4rem)]"
       aria-labelledby="hero-title"
     >
-      <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4 min-[38rem]:items-center min-[38rem]:gap-[clamp(1rem,2.5vw,1.75rem)]">
+      <AsciiVectorField />
+
+      <div className="relative z-10 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4 min-[38rem]:items-center min-[38rem]:gap-[clamp(1rem,2.5vw,1.75rem)]">
         <AvatarFrame
           className="w-[4.75rem] shrink-0 min-[38rem]:w-[clamp(5.5rem,10vw,7rem)]"
           src="/brand/kito.webp"
