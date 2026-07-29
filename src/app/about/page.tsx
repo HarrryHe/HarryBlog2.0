@@ -31,7 +31,6 @@ export default async function AboutPage() {
         />
         <article className="prose">
           <MarkdownContent source={source} />
-          <TechnicalSkills />
         </article>
       </div>
     </div>

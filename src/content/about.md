@@ -1,5 +1,16 @@
-I am Jiacheng—usually Harry—a software developer who enjoys turning ideas into working systems and learning through the details along the way.
+Hello! Welcome to my blog website!
 
-This blog is where I write down technical notes, project lessons, experiments, and ideas that are still becoming clear.
+*My Computer Setup*
+- OS: Arch Linux (Hyprland)
+- Terminator: kitty
+- Editor: Neovim
+- Shell: Bash
+---
+*My Education*
+- Bachelor of Science in Computer Science: Temple University (completed)
+- Master's of Science in Computer Science: Boston University (in progress)
+  
+I love ricing! Still learning ***How Linux Works***. I will post my `.config` once I fully complete my ricing setup.  
 
-`self.learning()` is a working principle: each project should leave behind a sharper tool, a clearer explanation, or a better question.
+This blog is where I write down my technical notes and project ideas.
+
