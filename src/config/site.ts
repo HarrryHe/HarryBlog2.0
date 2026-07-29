@@ -50,8 +50,7 @@ export const siteConfig: SiteConfig = {
     },
     { label: "LeetCode", href: "https://leetcode.com/u/qHJyxyWVgR/" },
     { label: "Bilibili", href: "https://space.bilibili.com/678613973" },
-    { label: "Email", href: "mailto:harryhe@bu.edu" },
-    { label: "RSS", href: "/rss.xml" }
+    { label: "Email", href: "mailto:harryhe@bu.edu" }
   ],
   giscus: {
     repo: "HarrryHe/HarryBlog2.0",
