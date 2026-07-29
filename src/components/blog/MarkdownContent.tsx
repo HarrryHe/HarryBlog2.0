@@ -28,8 +28,18 @@ function CodePre({ children, ...props }: ComponentProps<"pre">) {
   );
 }
 
+function UnorderedList(props: ComponentProps<"ul">) {
+  return <ul className="list-disc ps-6 marker:text-dim" {...props} />;
+}
+
+function OrderedList(props: ComponentProps<"ol">) {
+  return <ol className="list-decimal ps-6 marker:text-dim" {...props} />;
+}
+
 const components = {
   pre: CodePre,
+  ul: UnorderedList,
+  ol: OrderedList,
   a: ({ href = "", children, ...props }: ComponentProps<"a">) => {
     const external = href.startsWith("http");
     return (

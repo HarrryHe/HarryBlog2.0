@@ -8,4 +8,14 @@ describe("global prose layout", () => {
 
     expect(stylesheet).not.toMatch(/\.prose\s*\{[^}]*grid-column\s*:/s);
   });
+
+  it("keeps list-marker utilities with the reusable Markdown renderer", async () => {
+    const markdownRenderer = await readFile(
+      path.join(process.cwd(), "src/components/blog/MarkdownContent.tsx"),
+      "utf8"
+    );
+
+    expect(markdownRenderer).toContain('className="list-disc ps-6 marker:text-dim"');
+    expect(markdownRenderer).toContain('className="list-decimal ps-6 marker:text-dim"');
+  });
 });
