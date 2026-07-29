@@ -23,7 +23,7 @@ export function AvatarFrame({ className, alt, ...imageProps }: AvatarFrameProps)
         />
       </div>
       <span
-        className="pointer-events-none absolute inset-0 rounded-full border border-secondary opacity-70"
+        className="pointer-events-none absolute inset-0 rounded-full border-2 border-secondary opacity-70"
         data-avatar-ring
         aria-hidden="true"
       />
