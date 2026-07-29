@@ -9,6 +9,13 @@ describe("global prose layout", () => {
     expect(stylesheet).not.toMatch(/\.prose\s*\{[^}]*grid-column\s*:/s);
   });
 
+  it("uses JetBrains Mono as the site-wide default without removing the sans token", async () => {
+    const stylesheet = await readFile(path.join(process.cwd(), "src/app/globals.css"), "utf8");
+
+    expect(stylesheet).toMatch(/body\s*\{[^}]*font-family:\s*var\(--font-mono\)/s);
+    expect(stylesheet).toContain('--font-sans:');
+  });
+
   it("keeps list-marker utilities with the reusable Markdown renderer", async () => {
     const markdownRenderer = await readFile(
       path.join(process.cwd(), "src/components/blog/MarkdownContent.tsx"),
