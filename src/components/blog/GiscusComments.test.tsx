@@ -31,12 +31,12 @@ describe("GiscusComments", () => {
     });
   });
 
-  it("uses the editor-aligned dark theme", () => {
+  it("loads the site-owned Quiet Editor theme", () => {
     const { container } = render(<GiscusComments />);
 
     expect(container.querySelector("[data-giscus-theme]")).toHaveAttribute(
       "data-giscus-theme",
-      "dark_dimmed"
+      "https://harry-blog2-0.vercel.app/giscus-theme.css"
     );
   });
 });

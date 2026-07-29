@@ -6,6 +6,7 @@ import styles from "./GiscusComments.module.css";
 
 export function GiscusComments() {
   const config = siteConfig.giscus;
+  const theme = new URL("/giscus-theme.css", siteConfig.canonicalUrl).toString();
 
   return (
     <section className={styles.section} aria-labelledby="comments-title">
@@ -30,7 +31,7 @@ export function GiscusComments() {
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="bottom"
-          theme="dark_dimmed"
+          theme={theme}
           lang="en"
           loading="lazy"
         />
